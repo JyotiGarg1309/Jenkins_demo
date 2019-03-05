@@ -15,18 +15,18 @@ public class AutoCompleteSearch {
 		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/ExeDrivers/chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.get("https://www.google.com/");
-		
+
 		driver.findElement(By.xpath("//input[@class='gLFyf gsfi']")).sendKeys("weather");
 		Thread.sleep(3000);
-		List <WebElement> all = driver.findElements(By.xpath("//div[@class='aajZCb']/ul//li[@class='sbct' and @role='presentation']"));
+		List<WebElement> all = driver
+				.findElements(By.xpath("//div[@class='aajZCb']/ul//li[@class='sbct' and @role='presentation']"));
 		System.out.println(all.size());
-		 for(int i=0;i<all.size();i++){
-	            System.out.println(all.get(i).getText());
-	        }
-		 
-		 driver.quit();
+		for (int i = 0; i < all.size(); i++) {
+			System.out.println(all.get(i).getText());
+		}
 
-	
+		driver.quit();
+
 	}
 
 }
